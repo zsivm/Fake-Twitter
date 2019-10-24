@@ -1,11 +1,22 @@
 function addParagraphWithMessage() {
-    let container = document.getElementById("paragraphs");
-    let paragraph = document.createElement("P");
-    let message = document.getElementById("message").value;
+    let container = _getElement("paragraphs");
+    let paragraph = _createElement("P");
+    let message = _getElement("message").value;
     
     if(message) {
-        paragraph.appendChild(document.createTextNode(message));
+        paragraph.appendChild(_createText(message));
         container.appendChild(paragraph);
     }
- 
+}
+
+function _getElement(sId) {
+    return document.getElementById(sId);
+}
+
+function _createElement(sElementCode) {
+    return document.createElement(sElementCode);
+}
+
+function _createText(sText) {
+    return document.createTextNode(sText);
 }
